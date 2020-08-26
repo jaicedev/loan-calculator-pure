@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <title>Loan Calculator | Design Challeng</title>
+  </head>
+  <body>
+    <!-- <header class="container">
+      <h1 class="application-title">Loan Calculator</h1>
+      <p class="application-description">
+        Develop a better understanding of your finances.
+      </p>
+    </header> -->
+    <main class="container">
+      <div class="left">
+        <form action="" class="calculator">
+          <label for="" class="calc-label">Loan Amount</label>
+          <input value="5000" type="text" class="calc-input amount-input" />
+          <label for="" class="calc-label"
+            >Loan Term <i class="fas fa-info-circle"></i
+          ></label>
+          <div class="term-info">
+            <input value="5" type="text" class="calc-input term-input" />
+            <select name="term-unit-selection" id="term-unit-selection">
+              <option value="years" class="term-unit-selection-option">
+                Years
+              </option>
+              <option value="months" class="term-unit-selection-option">
+                Months
+              </option>
+            </select>
+          </div>
+          <label for="" class="calc-label"
+            >Interest Rate <i class="fas fa-info-circle"></i
+          ></label>
+          <div class="form-row">
+            <input value="4.5" type="text" class="calc-input interest-input" />
+            <button class="calc-button" type="submit">Calculate</button>
+          </div>
+        </form>
+      </div>
+      <div class="right">
+        <p class="payment-info small-text">Estimated</p>
+        <p class="payment-info">Monthly Payment</p>
+        <h2 class="payment-amount">$93.22</h2>
+        <div class="payment-details">
+          <p class="payment-info">
+            Interest Paid: <span class="specific-amount">$592.91</span>
+          </p>
+          <p class="payment-info">
+            Principal Paid: <span class="specific-amount">$5000.00</span> +
+          </p>
+          <hr style="width: 50%" />
+          <p class="payment-info">
+            Total Cost of Loan:
+            <br />
+            <span class="specific-amount">$5592.91</span>
+          </p>
+        </div>
+      </div>
+    </main>
+    <div class="container">
+      <p class="additional-info">
+        Advanced View <i class="fas fa-chevron-down"></i>
+      </p>
+    </div>
+    <footer class="container">
+      <p class="copy-text">&copy LoanCo LLC.</p>
+    </footer>
+  </body>
+</html>
