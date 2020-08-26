@@ -80,20 +80,20 @@
         <p class="payment-info">Monthly Payment</p>
         <h2 id="js-calculated-payment" class="payment-amount">$93.22</h2>
         <div class="payment-details">
+          <hr style="width: 50%" />
           <p class="payment-info">
             Interest Paid:
             <span id="js-interest-paid" class="specific-amount">$593.20</span>
           </p>
           <p class="payment-info" id="hide">
             Principal Paid:
-            <span id="js-principal" class="specific-amount">$5000.00</span> +
+            <span id="js-principal" class="specific-amount">$5000</span>
           </p>
-          <hr style="width: 50%" />
-          <p class="payment-info">
+          <!-- <p class="payment-info">
             Total Cost of Loan:
             <br />
             <span id="js-total-cost" class="specific-amount">$5593.20</span>
-          </p>
+          </p> -->
         </div>
       </div>
     </main>
@@ -102,10 +102,24 @@
         Advanced View <i class="fas fa-chevron-down"></i>
       </p>
       <div id="js-advanced-content" class="advanced-content">
-        <table id="js-advanced-table" class="advanced-table">
-          <thead></thead>
-          <tbody id="js-advanced-table-body"></tbody>
-        </table>
+        <div class="chart">
+          <canvas id="myChart"></canvas>
+        </div>
+        <div class="table">
+          <table class="amortization-table" id="js-advanced-table">
+            <thead>
+              <tr>
+                <th>Payment Date</th>
+                <th>Payment Amount</th>
+                <th>Principal</th>
+                <th>Interest</th>
+                <th>Total Interest</th>
+                <th>Balance</th>
+              </tr>
+            </thead>
+            <tbody id="js-advanced-table-body"></tbody>
+          </table>
+        </div>
       </div>
     </div>
     <footer class="container">
@@ -115,6 +129,11 @@
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
     integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+    integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg=="
     crossorigin="anonymous"
   ></script>
   <script src="/js/app.js"></script>

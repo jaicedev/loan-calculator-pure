@@ -165,6 +165,27 @@ main {
   cursor: help;
 }
 
+/* Advanced View CSS */
+
+.advanced-content {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.chart {
+  width: 40%;
+}
+.table {
+  width: 60%;
+}
+.amortization-table thead {
+  font-size: 0.8rem;
+  color: rgb(161, 161, 161);
+  text-align: center;
+}
+
 /* Tooltip CSS */
 
 .tooltip {
