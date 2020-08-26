@@ -17,36 +17,60 @@
     <title>Loan Calculator | Design Challeng</title>
   </head>
   <body>
-    <!-- <header class="container">
-      <h1 class="application-title">Loan Calculator</h1>
-      <p class="application-description">
-        Develop a better understanding of your finances.
-      </p>
-    </header> -->
+    <header>
+      <div id="invalid-input">Invalid Request Made, Please Try Again</div>
+    </header>
     <main class="container">
       <div class="left">
-        <form action="" class="calculator">
+        <form action="" id="js-calculator" class="calculator">
           <label for="" class="calc-label">Loan Amount</label>
-          <input value="5000" type="text" class="calc-input amount-input" />
+          <input
+            id="js-loan-value"
+            value="5000"
+            type="text"
+            class="calc-input amount-input"
+          />
           <label for="" class="calc-label"
-            >Loan Term <i class="fas fa-info-circle"></i
-          ></label>
+            >Loan Term
+            <i class="fas fa-info-circle tooltip"
+              ><span class="tooltiptext"
+                >Average Loan Term in the United States is 69.3 Months</span
+              ></i
+            ></label
+          >
           <div class="term-info">
-            <input value="5" type="text" class="calc-input term-input" />
+            <input
+              value="5"
+              id="js-length"
+              type="text"
+              class="calc-input term-input"
+            />
             <select name="term-unit-selection" id="term-unit-selection">
-              <option value="years" class="term-unit-selection-option">
+              <option value="Years" class="term-unit-selection-option">
                 Years
               </option>
-              <option value="months" class="term-unit-selection-option">
+              <option value="Months" class="term-unit-selection-option">
                 Months
               </option>
             </select>
           </div>
           <label for="" class="calc-label"
-            >Interest Rate <i class="fas fa-info-circle"></i
-          ></label>
+            >Interest Rate
+            <i class="fas fa-info-circle tooltip"
+              ><span class="tooltiptext"
+                ><span class="tooltip-heading">US Averages:</span><br />501-600
+                : 11.51%<br />601-660 : 7.55%<br />661-780 : 4.75%<br />781-850
+                : 3.82%</span
+              ></i
+            ></label
+          >
           <div class="form-row">
-            <input value="4.5" type="text" class="calc-input interest-input" />
+            <input
+              id="js-interest"
+              value="4.5"
+              type="text"
+              class="calc-input interest-input"
+            />
             <button class="calc-button" type="submit">Calculate</button>
           </div>
         </form>
@@ -54,30 +78,44 @@
       <div class="right">
         <p class="payment-info small-text">Estimated</p>
         <p class="payment-info">Monthly Payment</p>
-        <h2 class="payment-amount">$93.22</h2>
+        <h2 id="js-calculated-payment" class="payment-amount">$93.22</h2>
         <div class="payment-details">
           <p class="payment-info">
-            Interest Paid: <span class="specific-amount">$592.91</span>
+            Interest Paid:
+            <span id="js-interest-paid" class="specific-amount">$593.20</span>
           </p>
-          <p class="payment-info">
-            Principal Paid: <span class="specific-amount">$5000.00</span> +
+          <p class="payment-info" id="hide">
+            Principal Paid:
+            <span id="js-principal" class="specific-amount">$5000.00</span> +
           </p>
           <hr style="width: 50%" />
           <p class="payment-info">
             Total Cost of Loan:
             <br />
-            <span class="specific-amount">$5592.91</span>
+            <span id="js-total-cost" class="specific-amount">$5593.20</span>
           </p>
         </div>
       </div>
     </main>
     <div class="container">
-      <p class="additional-info">
+      <p id="js-advanced" class="additional-info">
         Advanced View <i class="fas fa-chevron-down"></i>
       </p>
+      <div id="js-advanced-content" class="advanced-content">
+        <table id="js-advanced-table" class="advanced-table">
+          <thead></thead>
+          <tbody id="js-advanced-table-body"></tbody>
+        </table>
+      </div>
     </div>
     <footer class="container">
       <p class="copy-text">&copy LoanCo LLC.</p>
     </footer>
   </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"
+  ></script>
+  <script src="/js/app.js"></script>
 </html>

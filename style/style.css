@@ -8,10 +8,19 @@ html {
   background-attachment: fixed;
 }
 
+#invalid-input {
+  color: red;
+  text-align: center;
+  font-family: "Comfortaa", cursive;
+}
+
 .container {
   display: flex;
   width: 80%;
   margin: 0 auto;
+}
+.fun-test {
+  color: red;
 }
 
 header {
@@ -156,6 +165,35 @@ main {
   cursor: help;
 }
 
+/* Tooltip CSS */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 10rem;
+  background-color: #ee715bd0;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  border-radius: 6px;
+  font-family: "Comfortaa", cursive;
+  box-shadow: 0 0 5px rgba(22, 22, 22, 0.2);
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+.tooltip-heading {
+  text-decoration: underline;
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
 @media screen and (min-width: 1400px) {
   .container {
     width: 60%;
@@ -178,5 +216,10 @@ main {
     width: 90%;
     padding: 5%;
     border-style: none;
+  }
+}
+@media screen and (max-width: 400px) {
+  #hide {
+    display: none;
   }
 }
