@@ -19,8 +19,18 @@ html {
   width: 80%;
   margin: 0 auto;
 }
-.fun-test {
-  color: red;
+
+.logo {
+  text-align: left;
+  font-size: 3rem;
+  font-family: 'Comfortaa', sans-serif, cursive;
+  margin-bottom: 0;
+}
+
+.sub-logo {
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 header {
@@ -173,26 +183,61 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 .chart {
   width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .table {
   width: 60%;
+  box-shadow: inset 0 0 6px #a8a8a8;
 }
 .amortization-table {
   display: block;
   overflow: auto;
-  height: 200px;
+  height: 300px;
   width: 100%;
-  scroll
+  text-align: center;
 }
 .amortization-table thead {
-  font-size: 0.8rem;
-  color: rgb(161, 161, 161);
+  font-size: .9rem;
+  color: rgb(255, 255, 255);
   position: sticky;
   top: 0;
+  background-color: rgba(255, 186, 82, 0.842);
 }
+
+/* Scrollbar Styling */
+.tbl-scroll::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+.tbl-scroll::-webkit-scrollbar
+{
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+.tbl-scroll::-webkit-scrollbar-thumb
+{
+    background-color: #F90; 
+    background-image: -webkit-linear-gradient(90deg,
+                                              rgba(255, 255, 255, .2) 25%,
+                                              transparent 25%,
+                                              transparent 50%,
+                                              rgba(255, 255, 255, .2) 50%,
+                                              rgba(255, 255, 255, .2) 75%,
+                                              transparent 75%,
+                                              transparent)
+}
+
 
 /* Tooltip CSS */
 

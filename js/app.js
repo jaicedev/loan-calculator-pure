@@ -58,15 +58,16 @@ function showCalculation() {
 }
 
 function advancedView() {
-  $("#js-advanced-table").hide();
+  $("#js-advanced-content").hide();
   $("#js-advanced").on("click", function () {
-    $("#js-advanced").hide();
-    $("#js-advanced-table").show();
-    createChart();
-    let loanLength = retrieveLoanTermLength();
-    let loanValue = $("#js-loan-value").val();
-    let loanInterest = $("#js-interest").val();
-    populateAmoritizationTable(loanLength, loanValue, loanInterest);
+    if($('#js-advanced-toggle').hasClass('fa-chevron-up')){
+      $("#js-advanced-content").slideUp();
+      $('#js-advanced-toggle').removeClass('fa-chevron-up').addClass('fa-chevron-down')
+    }else{
+      $('#js-advanced-toggle').removeClass('fa-chevron-down').addClass('fa-chevron-up')
+      $("#js-advanced-content").slideDown();
+      createChart();
+    }
   });
 }
 
@@ -83,6 +84,7 @@ function createChart() {
   let loanLength = retrieveLoanTermLength();
   let loanValue = $("#js-loan-value").val();
   let loanInterest = $("#js-interest").val();
+  populateAmoritizationTable(loanLength, loanValue, loanInterest);
   var chartInsertion = document.getElementById("myChart").getContext("2d");
   var paymentChart = new Chart(chartInsertion, {
     type: "doughnut",
@@ -106,6 +108,9 @@ function createChart() {
 }
 
 function populateAmoritizationTable(length, value, interest) {
+  if($('#js-advanced-table-body').text.length > 0){
+    $('#js-advanced-table-body').text('');
+  }
   let totalInterest = 0;
   let balance = value;
   let date = new Date();

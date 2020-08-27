@@ -14,10 +14,13 @@
       integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>Loan Calculator | Design Challeng</title>
   </head>
   <body>
-    <header>
+    <header class="container">
+      <h1 class="logo">Fixed Loan Calculator</h1>
+      <p class="logo sub-logo">Complication not Required</p>
       <div id="invalid-input">Invalid Request Made, Please Try Again</div>
     </header>
     <main class="container">
@@ -98,15 +101,12 @@
       </div>
     </main>
     <div class="container">
-      <p id="js-advanced" class="additional-info">
-        Advanced View <i class="fas fa-chevron-down"></i>
-      </p>
       <div id="js-advanced-content" class="advanced-content">
         <div class="chart">
           <canvas id="myChart"></canvas>
         </div>
         <div class="table">
-          <table class="amortization-table" id="js-advanced-table">
+          <table class="amortization-table tbl-scroll" id="js-advanced-table">
             <thead>
               <tr>
                 <th>Payment Date</th>
@@ -122,6 +122,9 @@
         </div>
       </div>
     </div>
+    <p id="js-advanced" class="additional-info">
+      Advanced View <i id="js-advanced-toggle" class="fas fa-chevron-down"></i>
+    </p>
     <footer class="container">
       <p class="copy-text">&copy LoanCo LLC.</p>
     </footer>
