@@ -63,6 +63,10 @@ function advancedView() {
     $("#js-advanced").hide();
     $("#js-advanced-table").show();
     createChart();
+    let loanLength = retrieveLoanTermLength();
+    let loanValue = $("#js-loan-value").val();
+    let loanInterest = $("#js-interest").val();
+    populateAmoritizationTable(loanLength, loanValue, loanInterest);
   });
 }
 
@@ -99,6 +103,32 @@ function createChart() {
     },
     options: {},
   });
+}
+
+function populateAmoritizationTable(length, value, interest) {
+  let totalInterest = 0;
+  let balance = value;
+  let date = new Date();
+  let month = date.getMonth();
+  let year = date.getFullYear();
+  let dateString = month.toString() + "/" + year.toString();
+  let payment = monthlyPayment(length, value, interest);
+  for (let i = 0; i < length; i++) {
+    let body = $("#js-advanced-table-body");
+    let tr = document.createElement("tr");
+    let payDate = document.createElement("td");
+    let payAmt = document.createElement("td");
+    let principal = document.createElement("td");
+    let interest = document.createElement("td");
+    let total = document.createElement("td");
+    let remaining = document.createElement("td");
+    payDate.textContent = dateString;
+    payAmt.textContent = payment.toString();
+    remaining.textContent = balance;
+    balance = (balance - payment).toFixed(2);
+    tr.append(payDate, payAmt, principal, interest, total, balance);
+    body.append(tr);
+  }
 }
 
 $(advancedView);

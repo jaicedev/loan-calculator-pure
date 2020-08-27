@@ -180,10 +180,18 @@ main {
 .table {
   width: 60%;
 }
+.amortization-table {
+  display: block;
+  overflow: auto;
+  height: 200px;
+  width: 100%;
+  scroll
+}
 .amortization-table thead {
   font-size: 0.8rem;
   color: rgb(161, 161, 161);
-  text-align: center;
+  position: sticky;
+  top: 0;
 }
 
 /* Tooltip CSS */
