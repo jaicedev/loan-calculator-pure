@@ -200,7 +200,7 @@ main {
 .amortization-table {
   display: block;
   overflow: auto;
-  height: 300px;
+  height: 40vh;
   width: 100%;
   text-align: center;
 }
@@ -294,6 +294,8 @@ main {
   }
   .advanced-content {
     flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
   }
   .table {
     width: 100%;
@@ -301,5 +303,11 @@ main {
   .chart {
     width: 100%;
     margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width:400px){
+  .hide {
+    display: none;
   }
 }

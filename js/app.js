@@ -122,12 +122,14 @@ function populateAmoritizationTable(length, value, interest) {
     let body = $("#js-advanced-table-body");
     let tr = document.createElement("tr");
     let payDate = document.createElement("td");
-    let payAmt = document.createElement("td");
+    let payAmt = document.createElement("td")
     let principal = document.createElement("td");
     let interest = document.createElement("td");
     let total = document.createElement("td");
     let remaining = document.createElement("td");
     payDate.textContent = dateString;
+    payAmt.className = 'hide'
+    total.className = 'hide'
     payAmt.textContent = payment.toString();
     remaining.textContent = balance;
     balance = (balance - payment).toFixed(2);
