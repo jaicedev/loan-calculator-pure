@@ -28,15 +28,15 @@ function showInterestPaid(length, value, interest) {
   return parseFloat(interestPaid).toFixed(2);
 }
 
-function showTotalCost(length, value, interest) {
-  let payment = monthlyPayment(length, value, interest);
-  let interestPaid = payment * length - value;
-  let totalCost = (parseFloat(value) + parseFloat(interestPaid))
-    .toFixed(2)
-    .toString();
-  $("#js-total-cost").text("$" + totalCost);
-  return totalCost;
-}
+// function showTotalCost(length, value, interest) {
+//   let payment = monthlyPayment(length, value, interest);
+//   let interestPaid = payment * length - value;
+//   let totalCost = (parseFloat(value) + parseFloat(interestPaid))
+//     .toFixed(2)
+//     .toString();
+//   $("#js-total-cost").text("$" + totalCost);
+//   return totalCost;
+// }
 
 function showCalculation() {
   $("#invalid-input").hide();
@@ -60,11 +60,15 @@ function showCalculation() {
 function advancedView() {
   $("#js-advanced-content").hide();
   $("#js-advanced").on("click", function () {
-    if($('#js-advanced-toggle').hasClass('fa-chevron-up')){
+    if ($("#js-advanced-toggle").hasClass("fa-chevron-up")) {
       $("#js-advanced-content").slideUp();
-      $('#js-advanced-toggle').removeClass('fa-chevron-up').addClass('fa-chevron-down')
-    }else{
-      $('#js-advanced-toggle').removeClass('fa-chevron-down').addClass('fa-chevron-up')
+      $("#js-advanced-toggle")
+        .removeClass("fa-chevron-up")
+        .addClass("fa-chevron-down");
+    } else {
+      $("#js-advanced-toggle")
+        .removeClass("fa-chevron-down")
+        .addClass("fa-chevron-up");
       $("#js-advanced-content").slideDown();
       createChart();
     }
@@ -108,8 +112,8 @@ function createChart() {
 }
 
 function populateAmoritizationTable(length, value, interest) {
-  if($('#js-advanced-table-body').text.length > 0){
-    $('#js-advanced-table-body').text('');
+  if ($("#js-advanced-table-body").text.length > 0) {
+    $("#js-advanced-table-body").text("");
   }
   let totalInterest = 0;
   let balance = value;
@@ -122,14 +126,14 @@ function populateAmoritizationTable(length, value, interest) {
     let body = $("#js-advanced-table-body");
     let tr = document.createElement("tr");
     let payDate = document.createElement("td");
-    let payAmt = document.createElement("td")
+    let payAmt = document.createElement("td");
     let principal = document.createElement("td");
     let interest = document.createElement("td");
     let total = document.createElement("td");
     let remaining = document.createElement("td");
     payDate.textContent = dateString;
-    payAmt.className = 'hide'
-    total.className = 'hide'
+    payAmt.className = "hide";
+    total.className = "hide";
     payAmt.textContent = payment.toString();
     remaining.textContent = balance;
     balance = (balance - payment).toFixed(2);
